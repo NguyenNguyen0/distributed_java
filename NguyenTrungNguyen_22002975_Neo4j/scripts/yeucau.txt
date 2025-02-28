@@ -1,0 +1,78 @@
+//GSon vs Jackson
+
+//CRUD tren Relationship
+
+//Full text search
+//1. Text index
+//2. Search by keywords
+
+//Them 1 thuoc tinh ngay thanh lap khoa (Department), gia tri khoi tao la ngay hien tai
+
+
+
+public class StudentDao {
+
+    private final Driver driver;
+    private final SessionConfig sessionConfig;
+
+    public StudentDao(Driver driver, String dbName) {
+        this.driver = driver;
+        sessionConfig = SessionConfig.builder().withDatabase(dbName).build();
+    }
+
+    public boolean enrollCourse(String studentId, String courseId){
+
+        return false;
+    }
+
+    public boolean unenrollCourse(String studentId, String courseId){
+
+        return false;
+    }
+
+    public boolean updateEnrollment(String studentId, String courseId, double grade){
+
+        return false;
+    }
+
+
+   public Enrollment findEnrollment(String studentId, String courseId){
+        return null;
+    }
+}
+
+
+
+
+//Full text search
+//1. Text index
+//2. Search by keywords
+
+//Them 1 thuoc tinh ngay thanh lap khoa (Department), gia tri khoi tao la ngay hien tai
+
+MERGE (d:Department)
+SET d.created_date = date();
+
+MATCH (d:Department)
+WHERE d.created_date.year = 2023
+RETURN d.name, d.created_date;
+
+
+CREATE FULLTEXT INDEX department_fulltext FOR (n:Department) ON EACH [n.name, n.dean, n.building]
+
+SHOW INDEXES
+
+CALL db.index.fulltext.queryNodes("department_fulltext", "Electrical Engineering") YIELD node
+RETURN node.name, node.dean, node.building
+
+
+public static <T> T toObject(Node node, Class<T> cls) {
+        Map<String, Object> map = node.asMap();
+        String json = GSON.toJson(map);
+        return GSON.fromJson(json, cls);
+    }
+
+    public static <T> Map<String, Object> asMap(T cls){
+        String json = GSON.toJson(cls);
+        return GSON.fromJson(json,  new TypeToken<Map<String, Object>>(){}  );
+    }

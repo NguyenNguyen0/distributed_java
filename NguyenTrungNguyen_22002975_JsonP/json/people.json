@@ -1,0 +1,372 @@
+[
+  {
+    "firstName": "Berry",
+    "lastName": "Sipes",
+    "age": 33,
+    "address": {
+      "streetAddress": "99856 Anderson Trace",
+      "city": "East Elois",
+      "state": "Connecticut",
+      "postalCode": 20067
+    },
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "(730) 222-0970"
+      },
+      {
+        "type": "Home",
+        "number": "(730) 200-8475"
+      }
+    ]
+  },
+  {
+    "firstName": "Milford",
+    "lastName": "Little",
+    "age": 42,
+    "address": {
+      "streetAddress": "6309 Aufderhar Ways",
+      "city": "Rossiebury",
+      "state": "Montana",
+      "postalCode": 4312
+    },
+    "phoneNumbers": [
+      {
+        "type": "Fax",
+        "number": "(505) 349-3405"
+      }
+    ]
+  },
+  {
+    "firstName": "Denisse",
+    "lastName": "Crona",
+    "age": 47,
+    "address": {
+      "streetAddress": "869 Hahn Trail",
+      "city": "Keithamouth",
+      "state": "Arkansas",
+      "postalCode": 4227
+    },
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "(505) 648-6449"
+      }
+    ]
+  },
+  {
+    "firstName": "Preston",
+    "lastName": "Rohan",
+    "age": 37,
+    "address": {
+      "streetAddress": "304 Conroy Land",
+      "city": "North Altonview",
+      "state": "Wisconsin",
+      "postalCode": 86708
+    },
+    "phoneNumbers": [
+      {
+        "type": "Fax",
+        "number": "(305) 208-2252"
+      },
+      {
+        "type": "Work",
+        "number": "(305) 464-3865"
+      }
+    ]
+  },
+  {
+    "firstName": "Felton",
+    "lastName": "Ledner",
+    "age": 27,
+    "address": {
+      "streetAddress": "079 Tod Circle",
+      "city": "Carrollton",
+      "state": "Mississippi",
+      "postalCode": 43815
+    }
+  },
+  {
+    "firstName": "Humberto",
+    "lastName": "Herman",
+    "age": 46,
+    "address": {
+      "streetAddress": "303 Alejandra Plain",
+      "city": "Alysabury",
+      "state": "Arizona",
+      "postalCode": 25239
+    },
+    "phoneNumbers": [
+      {
+        "type": "Fax",
+        "number": "(305) 515-8693"
+      }
+    ]
+  },
+  {
+    "firstName": "Yahaira",
+    "lastName": "MacGyver",
+    "age": 28,
+    "address": {
+      "streetAddress": "0406 Tromp Knolls",
+      "city": "Timmyberg",
+      "state": "Nevada",
+      "postalCode": 56596
+    },
+    "phoneNumbers": [
+      {
+        "type": "Fax",
+        "number": "(505) 646-5383"
+      },
+      {
+        "type": "Fax",
+        "number": "(305) 747-2173"
+      },
+      {
+        "type": "Fax",
+        "number": "(305) 208-1679"
+      }
+    ]
+  },
+  {
+    "firstName": "Milan",
+    "lastName": "Bogan",
+    "age": 34,
+    "address": {
+      "streetAddress": "71004 Flossie Pike",
+      "city": "Fabianstad",
+      "state": "Missouri",
+      "postalCode": 36316
+    },
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "(472) 431-3208"
+      },
+      {
+        "type": "Home",
+        "number": "(505) 646-5245"
+      }
+    ]
+  },
+  {
+    "firstName": "Truman",
+    "lastName": "Spinka",
+    "age": 25,
+    "address": {
+      "streetAddress": "580 Pagac Island",
+      "city": "East Billymouth",
+      "state": "Michigan",
+      "postalCode": 76787
+    }
+  },
+  {
+    "firstName": "Ken",
+    "lastName": "Jacobi",
+    "age": 27,
+    "address": {
+      "streetAddress": "541 Cronin Pike",
+      "city": "Hauckside",
+      "state": "Tennessee",
+      "postalCode": 70086
+    },
+    "phoneNumbers": [
+      {
+        "type": "Fax",
+        "number": "(330) 325-0745"
+      },
+      {
+        "type": "Work",
+        "number": "(743) 998-1218"
+      }
+    ]
+  },
+  {
+    "firstName": "Nikki",
+    "lastName": "Sanford",
+    "age": 27,
+    "address": {
+      "streetAddress": "354 Davis Orchard",
+      "city": "Rutherfordburgh",
+      "state": "Virginia",
+      "postalCode": 85610
+    }
+  },
+  {
+    "firstName": "Gordon",
+    "lastName": "McGlynn",
+    "age": 48,
+    "address": {
+      "streetAddress": "6753 Gerlach Lock",
+      "city": "Stiedemannshire",
+      "state": "New Hampshire",
+      "postalCode": 85307
+    },
+    "phoneNumbers": [
+      {
+        "type": "Work",
+        "number": "(983) 213-1995"
+      },
+      {
+        "type": "Work",
+        "number": "(207) 499-0951"
+      },
+      {
+        "type": "Fax",
+        "number": "(754) 255-9379"
+      }
+    ]
+  },
+  {
+    "firstName": "Harvey",
+    "lastName": "Morissette",
+    "age": 49,
+    "address": {
+      "streetAddress": "924 Wisozk Shoal",
+      "city": "Hanhmouth",
+      "state": "North Carolina",
+      "postalCode": 98651
+    },
+    "phoneNumbers": [
+      {
+        "type": "Work",
+        "number": "(405) 946-8443"
+      },
+      {
+        "type": "Fax",
+        "number": "(983) 416-2396"
+      }
+    ]
+  },
+  {
+    "firstName": "Whitney",
+    "lastName": "Wyman",
+    "age": 19,
+    "address": {
+      "streetAddress": "90462 Crona Shoal",
+      "city": "Lake Henry",
+      "state": "Oregon",
+      "postalCode": 89224
+    }
+  },
+  {
+    "firstName": "Jeffrey",
+    "lastName": "Orn",
+    "age": 38,
+    "address": {
+      "streetAddress": "282 Turner Prairie",
+      "city": "North Thora",
+      "state": "Arizona",
+      "postalCode": 68749
+    },
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "(828) 223-3798"
+      },
+      {
+        "type": "Fax",
+        "number": "(505) 475-5042"
+      }
+    ]
+  },
+  {
+    "firstName": "Jerilyn",
+    "lastName": "Hermann",
+    "age": 28,
+    "address": {
+      "streetAddress": "62801 Pia Islands",
+      "city": "Temikaburgh",
+      "state": "New Jersey",
+      "postalCode": 14420
+    }
+  },
+  {
+    "firstName": "Caprice",
+    "lastName": "Nikolaus",
+    "age": 47,
+    "address": {
+      "streetAddress": "39500 Cormier Drive",
+      "city": "Dannyview",
+      "state": "Oregon",
+      "postalCode": 53505
+    },
+    "phoneNumbers": [
+      {
+        "type": "Home",
+        "number": "(472) 247-2783"
+      }
+    ]
+  },
+  {
+    "firstName": "Mel",
+    "lastName": "Stroman",
+    "age": 35,
+    "address": {
+      "streetAddress": "5650 Ernesto Rest",
+      "city": "Macejkovicville",
+      "state": "Delaware",
+      "postalCode": 98255
+    },
+    "phoneNumbers": [
+      {
+        "type": "Fax",
+        "number": "(505) 920-5139"
+      },
+      {
+        "type": "Fax",
+        "number": "(940) 644-2319"
+      },
+      {
+        "type": "Fax",
+        "number": "(984) 376-0735"
+      }
+    ]
+  },
+  {
+    "firstName": "Galina",
+    "lastName": "Funk",
+    "age": 43,
+    "address": {
+      "streetAddress": "8773 Rempel Land",
+      "city": "Eleanoraport",
+      "state": "Ohio",
+      "postalCode": 65081
+    },
+    "phoneNumbers": [
+      {
+        "type": "Work",
+        "number": "(983) 460-4546"
+      },
+      {
+        "type": "Home",
+        "number": "(305) 200-2986"
+      },
+      {
+        "type": "Fax",
+        "number": "(505) 462-2642"
+      }
+    ]
+  },
+  {
+    "firstName": "Jesenia",
+    "lastName": "Halvorson",
+    "age": 33,
+    "address": {
+      "streetAddress": "909 Lemke Cliffs",
+      "city": "Kreigermouth",
+      "state": "Maine",
+      "postalCode": 81282
+    },
+    "phoneNumbers": [
+      {
+        "type": "Work",
+        "number": "(826) 639-2965"
+      },
+      {
+        "type": "Work",
+        "number": "(272) 510-3031"
+      }
+    ]
+  }
+]

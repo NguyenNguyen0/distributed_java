@@ -1,0 +1,11 @@
+course_id,name,hours,dept_id
+CS101,Programming,4,CS
+CS201,Algorithms,3,CS
+CS202,Systems,3,CS
+MA101,Algebra,3,Math
+MA201,Calculus,4,Math
+MA301,Analysis,4,Math
+MU104,Jazz,3,Music
+EE102,Circuits,3,EE
+IE101,Proabability,3,IE
+IE102,Statistics,3,IE

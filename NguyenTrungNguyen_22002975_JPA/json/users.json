@@ -1,0 +1,166 @@
+[
+    {
+        "id": 1,
+        "username": "dustin.sporer",
+        "password": "983t2y5b05yos826",
+        "email": "dustin.sporer@gmail.com",
+        "groups": [
+            {
+                "id": 2,
+                "name": "User"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "username": "sherice.sporer",
+        "password": "08jar7i09g6b",
+        "email": "sherice.sporer@gmail.com",
+        "groups": [
+            {
+                "id": 1,
+                "name": "Admin"
+            },
+            {
+                "id": 2,
+                "name": "User"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "username": "gladis.simonis",
+        "password": "994le9v620460tav",
+        "email": "gladis.simonis@gmail.com",
+        "groups": [
+            {
+                "id": 1,
+                "name": "Admin"
+            },
+            {
+                "id": 2,
+                "name": "User"
+            },
+            {
+                "id": 3,
+                "name": "Manager"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "username": "sung.jacobs",
+        "password": "5n402d1p551es1",
+        "email": "sung.jacobs@gmail.com",
+        "groups": [
+            {
+                "id": 1,
+                "name": "Admin"
+            },
+            {
+                "id": 2,
+                "name": "User"
+            },
+            {
+                "id": 3,
+                "name": "Manager"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "username": "danial.kirlin",
+        "password": "7v74wr78071",
+        "email": "danial.kirlin@gmail.com",
+        "groups": [
+            {
+                "id": 2,
+                "name": "User"
+            },
+            {
+                "id": 3,
+                "name": "Manager"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "username": "donna.hand",
+        "password": "50vofk026gf663",
+        "email": "donna.hand@gmail.com",
+        "groups": [
+            {
+                "id": 2,
+                "name": "User"
+            },
+            {
+                "id": 3,
+                "name": "Manager"
+            }
+        ]
+    },
+    {
+        "id": 7,
+        "username": "lesley.cole",
+        "password": "8026p7r316o",
+        "email": "lesley.cole@gmail.com",
+        "groups": [
+            {
+                "id": 2,
+                "name": "User"
+            },
+            {
+                "id": 3,
+                "name": "Manager"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "username": "assunta.skiles",
+        "password": "jo77hsbb2qf",
+        "email": "assunta.skiles@gmail.com",
+        "groups": [
+            {
+                "id": 1,
+                "name": "Admin"
+            },
+            {
+                "id": 2,
+                "name": "User"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "username": "coleen.gerhold",
+        "password": "n5c36915f5g3",
+        "email": "coleen.gerhold@gmail.com",
+        "groups": [
+            {
+                "id": 1,
+                "name": "Admin"
+            },
+            {
+                "id": 3,
+                "name": "Manager"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "username": "franklin.jones",
+        "password": "hl30y3tsqjop",
+        "email": "franklin.jones@gmail.com",
+        "groups": [
+            {
+                "id": 1,
+                "name": "Admin"
+            },
+            {
+                "id": 2,
+                "name": "User"
+            }
+        ]
+    }
+]
