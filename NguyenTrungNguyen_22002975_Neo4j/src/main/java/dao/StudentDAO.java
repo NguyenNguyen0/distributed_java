@@ -1,5 +1,7 @@
 package dao;
 
+import models.Course;
+import models.Enrollment;
 import models.Student;
 import org.neo4j.driver.Driver;
 import org.neo4j.driver.SessionConfig;
@@ -61,6 +63,90 @@ public class StudentDAO {
         } catch (Exception e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public boolean enrollCourse(String studentId, String courseId){
+        String query = "MATCH (s:Student {student_id: $student_id}), (c:Course {course_id: $course_id})\n" +
+                "MERGE (s)-[:ENROLLED]->(c);";
+
+        Map<String, Object> params = Map.of(
+                "student_id", studentId,
+                "course_id", courseId
+        );
+
+        try (var session = driver.session(sessionConfig)) {
+            var result =  session.run(query, params);
+            return result.consume().counters().relationshipsCreated() > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean unEnrollCourse(String studentId, String courseId){
+        String query = "MATCH (s:Student {student_id: $student_id})-[e:ENROLLED]->(c:Course {course_id: $course_id})\n" +
+                "DELETE e;";
+
+        Map<String, Object> params = Map.of(
+                "student_id", studentId,
+                "course_id", courseId
+        );
+
+        try (var session = driver.session(sessionConfig)) {
+            var result =  session.run(query, params);
+            return result.consume().counters().relationshipsDeleted() > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean updateEnrollment(String studentId, String courseId, double grade){
+        String query = "MATCH (s:Student {student_id: $student_id})-[e:ENROLLED]->(c:Course {course_id: $course_id})\n" +
+                "SET e.grade = $grade;";
+
+        Map<String, Object> params = Map.of(
+                "student_id", studentId,
+                "course_id", courseId,
+                "grade", grade
+        );
+
+        try (var session = driver.session(sessionConfig)) {
+            var result = session.run(query, params);
+            return result.consume().counters().propertiesSet() > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return  false;
+        }
+    }
+
+
+    public Enrollment findEnrollment(String studentId, String courseId){
+        String query = "MATCH (s:Student {student_id: $student_id})-[e:ENROLLED]->(c:Course {course_id: $course_id})\n" +
+                "RETURN s, e, c;";
+
+        Map<String, Object> params = Map.of(
+                "student_id", studentId,
+                "course_id", courseId
+        );
+        try (var session = driver.session(sessionConfig)) {
+            return session.readTransaction(tx -> {
+                var result = tx.run(query, params);
+                if (result.hasNext()) {
+                    var record = result.single();
+                    var student = AppUtil.toObject(record.get("s").asNode(), Student.class);
+                    var course = AppUtil.toObject(record.get("c").asNode(), Course.class);
+                    var enrollment = record.get("e").asRelationship();
+                    return new Enrollment(student, course, enrollment.get("grade").asDouble());
+                } else {
+                    return null;
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+
         }
     }
 }

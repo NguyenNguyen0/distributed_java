@@ -47,6 +47,10 @@ public class Main {
 //        });
 //        studentDAO.listStudentHasGpaOverThreePointTwo().forEach(System.out::println);
 
+//        System.out.println(studentDAO.enrollCourse("12", "MA301"));
+//        System.out.println(studentDAO.unEnrollCourse("12", "MA301"));
+//        System.out.println(studentDAO.updateEnrollment("33", "MA201", 9));
+//        System.out.println(studentDAO.findEnrollment("33", "MA201"));
 
 //        var newJava = new Course("JAVA02", "Advance Java Programing", 40);
 //        if (courseDAO.addCourse(newJava)) {

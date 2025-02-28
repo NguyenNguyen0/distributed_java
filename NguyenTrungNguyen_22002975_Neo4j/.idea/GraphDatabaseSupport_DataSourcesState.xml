@@ -6,15 +6,15 @@
         <option name="dataSources">
           <list>
             <DataSourceV1>
-              <option name="uuid" value="0e97ae29-9182-4264-932b-db891328e0d8" />
-              <option name="name" value="My Neo4j" />
+              <option name="uuid" value="c2129b6c-b83d-41d6-91a6-c49768e4b27b" />
+              <option name="name" value="neo4j" />
               <option name="dataSourceType" value="NEO4J_BOLT" />
               <option name="configuration">
                 <map>
                   <entry key="authType" value="User &amp; Password" />
                   <entry key="database" value="nguyentrungnguyen22002975" />
                   <entry key="host" value="localhost" />
-                  <entry key="password" value="123456789" />
+                  <entry key="password" value="12345678" />
                   <entry key="port" value="7687" />
                   <entry key="protocol" value="bolt" />
                   <entry key="user" value="neo4j" />
