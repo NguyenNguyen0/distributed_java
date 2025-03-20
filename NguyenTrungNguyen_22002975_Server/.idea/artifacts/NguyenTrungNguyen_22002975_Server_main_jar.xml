@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NguyenTrungNguyen_22002975_Server.main:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/NguyenTrungNguyen_22002975_Server_main_jar</output-path>
+    <root id="archive" name="NguyenTrungNguyen_22002975_Server.main.jar">
+      <element id="module-output" name="NguyenTrungNguyen_22002975_Server.main" />
+    </root>
+  </artifact>
+</component>
