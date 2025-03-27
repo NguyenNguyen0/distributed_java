@@ -1,0 +1,345 @@
+[{
+      "movie_id": 11,
+      "plot": "Charlie is an ..",
+      "genres": [
+        "Comedy",
+        "Short",
+        "Drama"
+      ],
+      "runtime": 30,
+      "cast": [
+        "Charles Chaplin",
+        "EDNA PURVIANCE",
+        "Eric Campbell",
+        "Albert Austin"
+      ],
+      "num_mflix_comments": 0,
+      "title": "The Immigrant",
+      "languages": [
+        "English"
+      ],
+      "directors": [
+        "Charles Chaplin"
+      ],
+      "rated": "UNRATED",
+      "awards": {
+        "wins": 1,
+        "nominations": 0,
+        "text": "1 win."
+      },
+      "year": 1917
+    },
+    {
+      "movie_id": 22,
+      "plot": "A wealthy man falls for a woman beneath his social status...",
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
+      "runtime": 105,
+      "cast": [
+        "Leonardo DiCaprio",
+        "Kate Winslet",
+        "Billy Zane",
+        "Kathy Bates"
+      ],
+      "num_mflix_comments": 215,
+      "title": "Ocean Love",
+      "languages": [
+        "English",
+        "French"
+      ],
+      "directors": [
+        "James Cameron"
+      ],
+      "rated": "PG-13",
+      "awards": {
+        "wins": 11,
+        "nominations": 14,
+        "text": "11 wins & 14 nominations."
+      },
+      "year": 1997
+    },
+    {
+      "movie_id": 33,
+      "plot": "A group of misfits embark on a quest to save the galaxy...",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Sci-Fi"
+      ],
+      "runtime": 122,
+      "cast": [
+        "Chris Pratt",
+        "Zoe Saldana",
+        "Dave Bautista",
+        "Vin Diesel"
+      ],
+      "num_mflix_comments": 187,
+      "title": "Space Guardians",
+      "languages": [
+        "English"
+      ],
+      "directors": [
+        "James Gunn"
+      ],
+      "rated": "PG-13",
+      "awards": {
+        "wins": 2,
+        "nominations": 5,
+        "text": "2 wins & 5 nominations."
+      },
+      "year": 2014
+    },
+    {
+      "movie_id": 44,
+      "plot": "A hacker discovers a conspiracy that threatens the world...",
+      "genres": [
+        "Action",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "runtime": 136,
+      "cast": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Carrie-Anne Moss",
+        "Hugo Weaving"
+      ],
+      "num_mflix_comments": 320,
+      "title": "The System",
+      "languages": [
+        "English"
+      ],
+      "directors": [
+        "Lana Wachowski",
+        "Lilly Wachowski"
+      ],
+      "rated": "R",
+      "awards": {
+        "wins": 4,
+        "nominations": 8,
+        "text": "4 wins & 8 nominations."
+      },
+      "year": 1999
+    },
+    {
+      "movie_id": 55,
+      "plot": "A boy wizard attends a magical school and faces dark forces...",
+      "genres": [
+        "Adventure",
+        "Fantasy",
+        "Family"
+      ],
+      "runtime": 152,
+      "cast": [
+        "Daniel Radcliffe",
+        "Emma Watson",
+        "Rupert Grint",
+        "Richard Harris"
+      ],
+      "num_mflix_comments": 276,
+      "title": "The Young Wizard",
+      "languages": [
+        "English"
+      ],
+      "directors": [
+        "Chris Columbus"
+      ],
+      "rated": "PG",
+      "awards": {
+        "wins": 3,
+        "nominations": 7,
+        "text": "3 wins & 7 nominations."
+      },
+      "year": 2001
+    },
+    {
+      "movie_id": 66,
+      "plot": "A criminal mastermind develops a plan to steal from a casino...",
+      "genres": [
+        "Crime",
+        "Thriller",
+        "Comedy"
+      ],
+      "runtime": 116,
+      "cast": [
+        "George Clooney",
+        "Brad Pitt",
+        "Matt Damon",
+        "Julia Roberts"
+      ],
+      "num_mflix_comments": 134,
+      "title": "Casino Heist",
+      "languages": [
+        "English",
+        "Italian"
+      ],
+      "directors": [
+        "Steven Soderbergh"
+      ],
+      "rated": "PG-13",
+      "awards": {
+        "wins": 1,
+        "nominations": 2,
+        "text": "1 win & 2 nominations."
+      },
+      "year": 2001
+    },
+    {
+      "movie_id": 77,
+      "plot": "A group of toys come to life when their owner is away...",
+      "genres": [
+        "Animation",
+        "Adventure",
+        "Comedy"
+      ],
+      "runtime": 81,
+      "cast": [
+        "Tom Hanks",
+        "Tim Allen",
+        "Don Rickles",
+        "Jim Varney"
+      ],
+      "num_mflix_comments": 198,
+      "title": "Living Toys",
+      "languages": [
+        "English"
+      ],
+      "directors": [
+        "John Lasseter"
+      ],
+      "rated": "G",
+      "awards": {
+        "wins": 8,
+        "nominations": 3,
+        "text": "8 wins & 3 nominations."
+      },
+      "year": 1995
+    },
+    {
+      "movie_id": 88,
+      "plot": "A group of survivors struggle to stay alive during a zombie apocalypse...",
+      "genres": [
+        "Horror",
+        "Drama",
+        "Thriller"
+      ],
+      "runtime": 116,
+      "cast": [
+        "Cillian Murphy",
+        "Naomie Harris",
+        "Christopher Eccleston",
+        "Megan Burns"
+      ],
+      "num_mflix_comments": 142,
+      "title": "28 Days Later",
+      "languages": [
+        "English"
+      ],
+      "directors": [
+        "Danny Boyle"
+      ],
+      "rated": "R",
+      "awards": {
+        "wins": 6,
+        "nominations": 10,
+        "text": "6 wins & 10 nominations."
+      },
+      "year": 2002
+    },
+    {
+      "movie_id": 99,
+      "plot": "A bounty hunter seeks revenge against a ruthless gang...",
+      "genres": [
+        "Western",
+        "Drama",
+        "Action"
+      ],
+      "runtime": 165,
+      "cast": [
+        "Clint Eastwood",
+        "Eli Wallach",
+        "Lee Van Cleef",
+        "Aldo Giuffrè"
+      ],
+      "num_mflix_comments": 87,
+      "title": "The Western Trio",
+      "languages": [
+        "English",
+        "Italian",
+        "Spanish"
+      ],
+      "directors": [
+        "Sergio Leone"
+      ],
+      "rated": "R",
+      "awards": {
+        "wins": 4,
+        "nominations": 2,
+        "text": "4 wins & 2 nominations."
+      },
+      "year": 1966
+    },
+    {
+      "movie_id": 100,
+      "plot": "An archaeological professor goes on adventures seeking ancient artifacts...",
+      "genres": [
+        "Action",
+        "Adventure"
+      ],
+      "runtime": 115,
+      "cast": [
+        "Harrison Ford",
+        "Karen Allen",
+        "Paul Freeman",
+        "Ronald Lacey"
+      ],
+      "num_mflix_comments": 223,
+      "title": "Lost Treasure",
+      "languages": [
+        "English",
+        "German"
+      ],
+      "directors": [
+        "Steven Spielberg"
+      ],
+      "rated": "PG",
+      "awards": {
+        "wins": 5,
+        "nominations": 9,
+        "text": "5 wins & 9 nominations."
+      },
+      "year": 1981
+    },
+    {
+      "movie_id": 101,
+      "plot": "A young woman discovers her destiny in a fantasy world...",
+      "genres": [
+        "Fantasy",
+        "Adventure",
+        "Drama"
+      ],
+      "runtime": 125,
+      "cast": [
+        "Jennifer Lawrence",
+        "Josh Hutcherson",
+        "Liam Hemsworth",
+        "Woody Harrelson"
+      ],
+      "num_mflix_comments": 176,
+      "title": "The Tournament",
+      "languages": [
+        "English"
+      ],
+      "directors": [
+        "Gary Ross"
+      ],
+      "rated": "PG-13",
+      "awards": {
+        "wins": 9,
+        "nominations": 15,
+        "text": "9 wins & 15 nominations."
+      },
+      "year": 2012
+    }]
