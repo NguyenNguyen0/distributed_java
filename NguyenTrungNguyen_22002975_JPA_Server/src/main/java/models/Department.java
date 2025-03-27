@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter
@@ -14,13 +15,22 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @ToString
 @Table(name = "Department")
-public class Department {
+public class Department implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "DepartmentID")
     private int id;
+
+    @Column(name = "Administrator")
     private int administrator;
+
+    @Column(name = "Budget")
     private double budget;
+
+    @Column(name = "Name")
     private String name;
+
+    @Column(name = "StartDate")
     private LocalDateTime startDate;
 
     public Department(int administrator, double budget, String name, LocalDateTime startDate) {

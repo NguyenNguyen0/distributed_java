@@ -111,18 +111,18 @@ INSERT INTO OnlineCourse (CourseID, URL)
 VALUES (3141, 'http://www.fineartschool.net/Trigonometry');
 
 -- Insert data into the OnsiteCourse table.
-INSERT INTO OnsiteCourse (CourseID, Location, Days, `Time`)
-VALUES (1050, '123 Smith', 'MTWH', '11:30:0');
-INSERT INTO OnsiteCourse (CourseID, Location, Days, `Time`)
-VALUES (1061, '234 Smith', 'TWHF', '13:15');
-INSERT INTO OnsiteCourse (CourseID, Location, Days, `Time`)
-VALUES (1045, '121 Smith','MWHF', '15:30');
-INSERT INTO OnsiteCourse (CourseID, Location, Days, `Time`)
-VALUES (4061, '22 Williams', 'TH', '11:15');
-INSERT INTO OnsiteCourse (CourseID, Location, Days, `Time`)
-VALUES (2042, '225 Adams', 'MTWH', '11:00');
-INSERT INTO OnsiteCourse (CourseID, Location, Days, `Time`)
-VALUES (4022, '23 Williams', 'MWF', '9:00');
+INSERT INTO OnsiteCourse (CourseID, Location, Days, Time)
+VALUES (1050, '123 Smith', 'MTWH', '2023-01-01 11:30:00');
+INSERT INTO OnsiteCourse (CourseID, Location, Days, Time)
+VALUES (1061, '234 Smith', 'TWHF', '2023-01-01 13:15:00');
+INSERT INTO OnsiteCourse (CourseID, Location, Days, Time)
+VALUES (1045, '121 Smith','MWHF', '2023-01-01 15:30:00');
+INSERT INTO OnsiteCourse (CourseID, Location, Days, Time)
+VALUES (4061, '22 Williams', 'TH', '2023-01-01 11:15:00');
+INSERT INTO OnsiteCourse (CourseID, Location, Days, Time)
+VALUES (2042, '225 Adams', 'MTWH', '2023-01-01 11:00:00');
+INSERT INTO OnsiteCourse (CourseID, Location, Days, Time)
+VALUES (4022, '23 Williams', 'MWF', '2023-01-01 09:00:00');
 
 -- Insert data into the CourseInstructor table.
 INSERT INTO CourseInstructor(CourseID, PersonID)

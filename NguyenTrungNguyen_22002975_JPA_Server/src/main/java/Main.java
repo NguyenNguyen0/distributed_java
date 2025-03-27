@@ -1,16 +1,21 @@
+import dao.CourseDAO;
+import dao.DepartmentDAO;
+import dao.OnlineCourseDAO;
+import dao.StudentDAO;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import models.OnlineCourse;
 import models.Student;
 
 import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) {
-        var em = Persistence.createEntityManagerFactory("mariadb-pu").createEntityManager();
-        var tr = em.getTransaction();
-        tr.begin();
-        var student = new Student("Lmao", "lmao", LocalDateTime.of(2025, 12, 12, 0, 0, 0));
-        em.persist(student);
-        tr.commit();
+//        DepartmentDAO departmentDAO = new DepartmentDAO();
+//        System.out.println(departmentDAO.listDepartmentsWithoutStudents());
+//        System.out.println(departmentDAO.getNumberOfStudentsByDepartment());
+        StudentDAO studentDAO = new StudentDAO();
+//        System.out.println(studentDAO.getAverageScoreOfStudents());
+        System.out.println(studentDAO.listStudentsStudyingCourseWithHighestScore("Quantitative"));
     }
 }

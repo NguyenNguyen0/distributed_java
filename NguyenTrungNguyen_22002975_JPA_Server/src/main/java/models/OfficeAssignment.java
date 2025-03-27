@@ -6,17 +6,26 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @Entity
 @NoArgsConstructor
 @ToString
 @Table(name = "OfficeAssignment")
-public class OfficeAssignment {
+public class OfficeAssignment implements Serializable {
     @Id
-    @OneToOne
-    @JoinColumn(name = "InstructorId")
-    private Instructor instructor;
+    @Column(name = "InstructorID")
+    private int instructorId;
+
+    @Column(name = "Location")
     private String location;
+
+    @Column(name = "Timestamp")
     private String timestamp;
+
+    @OneToOne
+    @JoinColumn(name = "InstructorID")
+    private Instructor instructor;
 }

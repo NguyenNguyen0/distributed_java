@@ -1,11 +1,15 @@
 package models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorValue;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -15,15 +19,11 @@ import java.util.Set;
 @NoArgsConstructor
 @ToString(callSuper = true)
 @DiscriminatorValue("Instructor")
-@Table(name = "CourseInstructor")
-public class Instructor extends Person {
+public class Instructor extends Person implements Serializable {
+    @Column(name = "HireDate")
     private LocalDateTime hireDate;
-    @ManyToMany
-    @JoinTable(
-        name = "CourseInstructor",
-        joinColumns = @JoinColumn(name = "instructor_id"),
-        inverseJoinColumns = @JoinColumn(name = "course_id")
-    )
+
+    @ManyToMany(mappedBy = "instructors")
     private Set<Course> courses;
 
     public Instructor(String firstName, String lastName, LocalDateTime hireDate) {
