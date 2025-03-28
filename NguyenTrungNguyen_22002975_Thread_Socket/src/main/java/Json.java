@@ -27,7 +27,8 @@ public class Json {
 
 //        List<Movie> movies = JsonUtil.readJsonFile("json/data.json");
 //        System.out.println("Json: " + movies);
-        System.out.println("Cast: " + JsonUtil.listCasts(66L));
-        JsonUtil.writeCastsToFile(66L, "json/output.txt");
+//        System.out.println("Cast: " + JsonUtil.listCasts(66L));
+//        JsonUtil.writeCastsToFile(66L, "json/output.txt");
+        System.out.println("Json: " + JsonUtil.listCastsStream("json/data.json",66L));
     }
 }

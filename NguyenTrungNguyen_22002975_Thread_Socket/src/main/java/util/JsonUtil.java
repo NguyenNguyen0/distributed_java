@@ -75,6 +75,82 @@ public class JsonUtil {
                 .orElse(List.of());
     }
 
+    public static List<String> listCastsStream(String filepath, Long movieId) {
+        File file = new File(filepath);
+        List<String> casts = new ArrayList<>();
+        String currentKey = "";
+        Movie currentMovie = null;
+        boolean isStringArray = false;
+        boolean inAwardsObject = false;
+        try (JsonParser parser = Json.createParser(new FileReader(file))) {
+            while (parser.hasNext()) {
+                JsonParser.Event event = parser.next();
+                System.out.println(currentMovie);
+                switch (event) {
+                    case START_ARRAY -> {
+                        if (currentKey.isEmpty()) {
+                            // This is the main array of movies
+                            continue;
+                        }
+                        isStringArray = true;
+                    }
+                    case START_OBJECT -> {
+                        if (currentKey.equals("awards")) {
+                            inAwardsObject = true;
+                            continue;
+                        }
+                        if (currentKey.isEmpty() && currentMovie == null) {
+                            currentMovie = new Movie();
+                        }
+                    }
+
+                    case KEY_NAME -> {
+                        currentKey = parser.getString();
+                    }
+
+                    case VALUE_STRING -> {
+                        System.out.println("currentKey: " + currentKey + " movieId: " + currentMovie.getMovieId());
+                        System.out.println(isStringArray);
+                        if (isStringArray && currentKey.equals("cast") && currentMovie.getMovieId() == movieId) {
+                            casts.add(parser.getString());
+                        }
+                    }
+
+                    case VALUE_NUMBER -> {
+                        if (currentKey.equals("movie_id")) {
+                            currentMovie.setMovieId(parser.getInt());
+                        }
+                    }
+
+                    case END_OBJECT -> {
+                        if (currentKey.equals("awards") || inAwardsObject) {
+                            inAwardsObject = false;
+                            continue;
+                        }
+                        if (currentMovie != null) {
+                            currentMovie = null;
+                            currentKey = "";
+                        }
+                    }
+                    case END_ARRAY -> {
+                        if (isStringArray) {
+                            if (currentKey.equals("cast") && currentMovie.getMovieId() == movieId) {
+                                return casts;
+                            } else {
+                                casts = new ArrayList<>();
+                            }
+                        }
+                        isStringArray = false;
+                    }
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return casts;
+    }
+
     public static List<Movie> readJsonFile(String filename) {
         File file = new File(filename);
         List<Movie> movies = new ArrayList<>();
