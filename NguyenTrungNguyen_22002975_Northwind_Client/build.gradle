@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group = 'iuh.fit'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation('org.hibernate:hibernate-core:7.0.0.Beta1')
+    implementation('org.glassfish.jaxb:jaxb-runtime:4.0.5')
+    implementation("org.mariadb.jdbc:mariadb-java-client:3.5.3")
+
+    implementation(files("libs/NorthwindRMIPrj-1.0-SNAPSHOT.jar"))
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
