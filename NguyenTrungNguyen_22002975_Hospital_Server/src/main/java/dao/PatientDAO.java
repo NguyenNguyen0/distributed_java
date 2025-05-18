@@ -11,6 +11,4 @@ public class PatientDAO {
         this.driver = driver;
         this.sessionConfig = SessionConfig.builder().withDatabase(dbName).build();
     }
-
-
 }

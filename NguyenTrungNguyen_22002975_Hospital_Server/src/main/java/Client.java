@@ -1,6 +1,8 @@
 import model.Doctor;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.List;
@@ -16,21 +18,21 @@ public class Client {
             System.out.println("2. No Of Doctors By Speciality");
             System.out.println("3. List Doctors By Speciality");
             System.out.println("4. Update Diagnosis");
-            System.out.println("5. Exit");
+            System.out.println("5. Delete Doctor");
+            System.out.println("6. Exit");
             System.out.print("Enter option: ");
             int option = scanner.nextInt();
             scanner.nextLine();
-            if (option == 5) {
+            if (option == 6) {
                 break;
             }
 
-            try (
-                var socket = new Socket("NGUYEN", 2975);
-                var out = new DataOutputStream(socket.getOutputStream());
-                var in = new DataInputStream(socket.getInputStream());
-                var objectOut = new ObjectOutputStream(out);
-                var objectIn = new ObjectInputStream(in);
-            ) {
+            try {
+                Socket socket = new Socket("NGUYEN", 2975);
+                // Create output stream first, then input stream
+                ObjectOutputStream objectOut = new ObjectOutputStream(socket.getOutputStream());
+                ObjectInputStream objectIn = new ObjectInputStream(socket.getInputStream());
+
                 switch (option) {
                     case 1:
                         System.out.println("== Add Doctor ==");
@@ -45,30 +47,30 @@ public class Client {
                         System.out.println("Enter doctor speciality: ");
                         doctor.setSpeciality(scanner.nextLine());
 
-                        out.writeUTF(String.valueOf(option));
+                        objectOut.writeObject(String.valueOf(option));
                         objectOut.writeObject(doctor);
-                        message = in.readUTF();
+                        message = (String) objectIn.readObject();
                         break;
                     case 2:
                         System.out.println("== No Of Doctors By Speciality ==");
                         System.out.println("Enter department name: ");
                         String departmentName = scanner.nextLine();
 
-                        out.writeUTF(String.valueOf(option));
-                        out.writeUTF(departmentName);
+                        objectOut.writeObject(String.valueOf(option));
+                        objectOut.writeObject(departmentName);
                         Map<String, Long> doctorBySpeciality = (Map<String, Long>) objectIn.readObject();
                         System.out.println(doctorBySpeciality);
-                        message = in.readUTF();
+                        message = (String) objectIn.readObject();
                         break;
                     case 3:
                         System.out.println("== List Doctors By Speciality ==");
                         System.out.println("Enter speciality: ");
                         String speciality = scanner.nextLine();
-                        out.writeUTF(String.valueOf(option));
-                        out.writeUTF(speciality);
+                        objectOut.writeObject(String.valueOf(option));
+                        objectOut.writeObject(speciality);
                         var doctors = (List<Doctor>) objectIn.readObject();
                         System.out.println(doctors);
-                        message = in.readUTF();
+                        message = (String) objectIn.readObject();
                         break;
                     case 4:
                         System.out.println("== Update Diagnosis ==");
@@ -78,11 +80,19 @@ public class Client {
                         String doctorId = scanner.nextLine();
                         System.out.println("Enter diagnosis: ");
                         String diagnosis = scanner.nextLine();
-                        out.writeUTF(String.valueOf(option));
-                        out.writeUTF(patientId);
-                        out.writeUTF(doctorId);
-                        out.writeUTF(diagnosis);
-                        message = in.readUTF();
+                        objectOut.writeObject(String.valueOf(option));
+                        objectOut.writeObject(patientId);
+                        objectOut.writeObject(doctorId);
+                        objectOut.writeObject(diagnosis);
+                        message = (String) objectIn.readObject();
+                        break;
+                    case 5:
+                        System.out.println("=== Delete Doctor ===");
+                        System.out.println("Enter doctor ID: ");
+                        String doctorIdToDelete = scanner.nextLine();
+                        objectOut.writeObject(String.valueOf(option));
+                        objectOut.writeObject(doctorIdToDelete);
+                        message = (String) objectIn.readObject();
                         break;
                     default: {
                         System.out.println("Invalid option");
@@ -91,6 +101,12 @@ public class Client {
                 }
 
                 System.out.println(message);
+
+                // Close resources
+                objectOut.close();
+                objectIn.close();
+                socket.close();
+
             } catch (UnknownHostException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {

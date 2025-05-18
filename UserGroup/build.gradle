@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+}
+
+group 'main'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitVersion = '5.11.0'
+}
+
+sourceCompatibility = '23'
+targetCompatibility = '23'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation('org.hibernate.orm:hibernate-core:6.4.4.Final')
+    implementation('org.glassfish.jaxb:jaxb-runtime:4.0.5')
+
+    // MariaDB JDBC driver
+    implementation('org.mariadb.jdbc:mariadb-java-client:3.3.3')
+
+    // Lombok for code generation
+    compileOnly('org.projectlombok:lombok:1.18.30')
+    annotationProcessor('org.projectlombok:lombok:1.18.30')
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -27,46 +27,45 @@ public class DoctorDAO {
         );
 
         try (var session = driver.session(sessionConfig)) {
-            return session.executeWrite(tx -> {
-                var result = tx.run(query, parameters);
-                return result.consume().counters().nodesCreated() > 0;
-            });
+            var result = session.executeWrite(tx -> tx.run(query, parameters).consume());
+            return result.counters().nodesCreated() > 0;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
     }
 
-    public Map<String, Long> getNoOfDoctorsBySpeciality (String departmentName) {
+    public Map<String, Long> getNoOfDoctorsBySpeciality(String departmentName) {
         String query = "MATCH (dep:Department {name: $departmentName})<-[r:BELONG_TO]-(doc:Doctor)\n" +
                 "WITH doc.Speciality AS speciality, count(doc) AS quantity\n" +
                 "RETURN speciality, quantity;";
         Map<String, Object> parameters = Map.of("departmentName", departmentName);
 
         try (var session = driver.session(sessionConfig)) {
-            return session.readTransaction(tx -> tx.run(query, parameters).stream().collect(
-                Collectors.toMap(
-                    record -> record.get("speciality").asString(),
-                    record -> record.get("quantity").asLong()
-                )
-            ));
+            return session.readTransaction(tx -> tx.run(query, parameters)
+                    .stream()
+                    .collect(Collectors.toMap(
+                                    record -> record.get("speciality").asString(),
+                                    record -> record.get("quantity").asLong()
+                            )
+                    ));
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    public List<Doctor> listDoctorsBySpeciality (String keyword) {
+    public List<Doctor> listDoctorsBySpeciality(String keyword) {
         String query = "CALL db.index.fulltext.queryNodes('doctor_speciality_index', $keyword) YIELD node AS doctor";
         Map<String, Object> parameters = Map.of("keyword", keyword);
         try (var session = driver.session(sessionConfig)) {
-            return session .readTransaction(tx -> tx.run(query, parameters).stream().map(
-                record -> new Doctor(
-                    record.get("doctor").get("ID").asString(),
-                    record.get("doctor").get("Name").asString(),
-                    record.get("doctor").get("Phone").asString(),
-                    record.get("doctor").get("Speciality").asString()
-                )
+            return session.readTransaction(tx -> tx.run(query, parameters).stream().map(
+                    record -> new Doctor(
+                            record.get("doctor").get("ID").asString(),
+                            record.get("doctor").get("Name").asString(),
+                            record.get("doctor").get("Phone").asString(),
+                            record.get("doctor").get("Speciality").asString()
+                    )
             ).collect(Collectors.toList()));
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,10 +85,23 @@ public class DoctorDAO {
         );
 
         try (var session = driver.session(sessionConfig)) {
-            return session.executeWrite(tx -> {
-                var result = tx.run(query, parameters);
-                return result.consume().counters().propertiesSet() > 0;
-            });
+            var result = session.executeWrite(tx -> tx.run(query, parameters).consume());
+            return result.counters().propertiesSet() > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean deleteDoctor(String doctorID) {
+        String query = "MATCH (doc:Doctor {ID: $doctorID})\n" +
+                "DETACH DELETE doc;";
+
+        Map<String, Object> parameters = Map.of("doctorID", doctorID);
+
+        try (var session = driver.session(sessionConfig)) {
+            var result = session.executeWrite(tx -> tx.run(query, parameters).consume());
+            return result.counters().nodesDeleted() > 0;
         } catch (Exception e) {
             e.printStackTrace();
             return false;
